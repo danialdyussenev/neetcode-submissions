@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int left = 0;
+        int right = s.size()-1;
+
+        while( left<right){
+            if(!std::isalnum(s[right])){
+                right -= 1;
+                continue;
+            }
+            if(!std::isalnum(s[left])){
+                left += 1;
+                continue;
+            }
+
+
+            if(std::tolower(s[left]) == std::tolower(s[right])){
+                right -= 1;
+                left += 1;
+                continue;
+            }else{
+                return false;
+            }
+        
+        }
+        return true;
+        
+        
+    }
+    
+};
